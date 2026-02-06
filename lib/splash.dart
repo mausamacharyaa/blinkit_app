@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:blinkit_clone/app_colors.dart';
+import 'package:blinkit_clone/login_screen.dart';
 import 'package:blinkit_clone/ui_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +13,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
